@@ -1,5 +1,3 @@
-import { BotFactory } from '../src/Types.d.ts'
-
 const bot: BotFactory = () => {
 	let theirLastMove = ''
 	let lastResult = 0
