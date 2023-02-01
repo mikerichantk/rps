@@ -25,7 +25,7 @@ const bot: BotFactory = () => {
 
 	const Shoot = () => {
 		// Decide what to do
-		if (turn%2===0 && (losses > 6 && wins < 5)
+		if (turn%2===0 && (losses > 6 && wins < 5))
 		{
 			return 'scissors'
 		}
