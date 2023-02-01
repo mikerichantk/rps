@@ -3,6 +3,7 @@ const bot: BotFactory = () => {
 	let lastResult = 0
 	let myLastMove = ''
 	let turn = 0
+	let losses = 0
 
 	// Called after each round with the results
 	// result is 1 for win, -1 for loss, 0 for tie
@@ -11,11 +12,15 @@ const bot: BotFactory = () => {
 		theirLastMove = theirMove
 		myLastMove = myMove
 		turn = turn + 1
+		if (result === -1)
+		{
+			losses = losses + 1	
+		}
 	}
 
 	const Shoot = () => {
 		// Decide what to do
-		if (turn%2===0)
+		if (turn%2===0 && losses < 6)
 		{
 			return 'scissors'
 		}
@@ -33,7 +38,7 @@ const bot: BotFactory = () => {
 	}
 
 	return {
-		Name: 'Yelfin',
+		Name: 'Frug Smasher',
 		Shoot,
 		Report,
 	}
